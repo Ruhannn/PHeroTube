@@ -3,19 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- link tailwind css -->
+    <!-- link tailwind css and google font -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
     <title>Hero Youtube</title>
   </head>
-  <body>
-    <header>
-
+  <!-- font -->
+  <body style="font-family: 'Inter', sans-serif;">
+    <header class="p-12">
+      <nav class="lg:flex md:flex items-center justify-between">
+        <img src="images/Logo.png" alt="" />
+        <button class="font-medium mt-5 lg:mt-0 md:mt-0 px-5 py-2 rounded bg-[#25252551] text-[#252525]">Sort by view</button>
+        <a
+          href=""
+          class=" font-medium px-5 py-2 rounded  text-white bg-red-500 hover:bg-red-400"
+          >Blog</a
+        >
+      </nav>
+      <hr class="h-px my-8 border-0 bg-[#25252551]">
     </header>
-    <main>
-
-    </main>
-    <footer>
-        
-    </footer>
+    <main></main>
+    <footer></footer>
   </body>
 </html>
