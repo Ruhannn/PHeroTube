@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/3664a2595e.js"
+      crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css" />
+    <style>
+     
+      .modal::-webkit-scrollbar {
+        display: none !important;
+      }
+      .read-more {
+        text-decoration: none;
+      }
+      .read-more:hover {
+        color: #3498db;
+        cursor: pointer;
+      }
+      .card {
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .card span {
+        background-image: linear-gradient(
+          to right,
+          #7dcfff,
+          #7aa2f7 50%,
+          #148ef1 50%
+        );
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+      }
+
+      .card span:before {
+        content: "";
+        background: rgb(63, 178, 255);
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .card span:hover {
+        background-position: 0;
+      }
+
+      .card span:hover::before {
+        width: 100%;
+      }
+      .modal-box::-webkit-scrollbar {
+        width: 0.1em;
+        background-color: transparent;
+      }
+      .modal-box::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 text-gray-700 text-base h-screen"
+    style="font-family: 'Inter', sans-serif">
+    <section class="title container mx-auto py-8">
+      <div class="text-center">
+        <h1 class="text-3xl uppercase">Blog Questions</h1>
+        <div class="mt-4 h-1 w-16 mx-auto bg-gray-700"></div>
+      </div>
+    </section>
+
+    <!-- Start Blog Layout -->
+    <div class="container mx-auto">
+      <div class="flex flex-wrap">
+        <div class="w-full md:w-1/2 p-4">
+          <div class="bg-white p-8 rounded-lg shadow-md card">
+            <h4 class="text-xl font-semibold uppercase mb-4">
+              Discuss the scope of
+              <span class="cursor-pointer text-[#3498db]">var</span>,
+              <span>let</span>, and <span>const</span>
+            </h4>
+            <div class="h-1 w-12 mb-4 bg-gray-700"></div>
+            <p class="text-sm">
+              Discover the scope of var, let, and const in JavaScript. Explore
+              how these variables work in web development. Click for more
+              insights!
+            </p>
+            <a
+              onclick="my_modal_3.showModal()"
+              href="#"
+              class="text-xs uppercase text-gray-600 transition duration-300 mt-2 inline-block read-more">
+              Read More <i class="fa-solid fa-arrow-right-long"> </i>
+            </a>
+          </div>
+        </div>
+        <dialog id="my_modal_3" class="modal">
+          <form method="dialog" class="modal-box overflow-y-hidden">
+            <h2 style="color: #007bff">
+              Understanding JavaScript Variable Scope
+            </h2>
+            <p>In JavaScript, there are three main types of variable scope:</p>
+            <ul>
+              <li>
+                <strong>var:</strong> Variables declared with
+                <code style="color: #28a745">var</code> have function-level
+                scope. They are accessible throughout the entire function they
+                are declared in.
+              </li>
+              <li>
+                <strong>let:</strong> Variables declared with
+                <code style="color: #ffc107">let</code> have block-level scope.
+                They are only visible within the block they are declared in.
+              </li>
+              <li>
+                <strong>const:</strong> Variables declared with
+                <code style="color: #dc3545">const</code> also have block-level
+                scope, but they cannot be reassigned after declaration.
+              </li>
+            </ul>
+            <p>Here are some examples about these concepts:</p>
+            <pre
+              style="
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 5px;
+                padding: 10px;
+                white-space: pre-wrap;
+                overflow-y: hidden;
+              ">
+              <code>
+function exampleFunction() {
+  if (true) {
+var x = 10;
+}
+console.log(x); // x is accessible here
+}
+            
+if (true) {
+  let y = 20;
+console.log(y); // y is accessible here
+}
+console.log(y); // y is not accessible here
+            
+const z = 30;
+console.log(z); // z is accessible here
+                  
+z = 40; // This will result in an error because you can't reassign a const variable.
+                  
+            </code>
+            </pre>
+            <button class="btn mb-2 bg-[#148ef1] text-white">Close</button>
+          </form>
+        </dialog>
+
+        <!-- 2nd -->
+        <div class="w-full md:w-1/2 p-4">
+          <div class="bg-white p-8 rounded-lg shadow-md card">
+            <h4 class="text-xl font-semibold uppercase mb-4">
+              The use cases of <span>null</span> and
+              <span>undefined</span>
+            </h4>
+            <div class="h-1 w-12 mb-4 bg-gray-700"></div>
+            <p class="text-sm">
+              Discover Coding Magic: NULL vs. UNDEFINED! See how these important
+              ideas affect web development. Click "Read More" to explore and
+              learn!
+            </p>
+            <a
+              onclick="my_modal_2.showModal()"
+              href="#"
+              class="text-xs uppercase text-gray-600 transition duration-300 mt-2 inline-block read-more"
+              >Read More <i class="fa-solid fa-arrow-right-long"> </i
+            ></a>
+          </div>
+        </div>
+        <dialog id="my_modal_2" class="modal">
+          <form method="dialog" class="modal-box">
+            <h2 style="color: #007bff">Understanding null and undefined</h2>
+            <p>
+              In JavaScript, we have two special values to represent missing or
+              empty data:
+            </p>
+            <h3>1. null - Explicit Empty Value</h3>
+            <p>
+              Imagine you have a variable for a book title, but there's no title
+              yet:
+            </p>
+            <pre
+              style="
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 5px;
+                padding: 10px;
+                white-space: pre-wrap;
+                overflow-y: hidden;
+                margin-top: 4px;
+                margin-bottom: 4px;
+              ">
+                  <code>
+let bookTitle = null; // No title yet
+                  </code>
+                </pre>
+            <p>
+              Here, we use <code style="color: #28a745">null</code> to say
+              there's no title assigned yet.
+            </p>
+
+            <h3>2. undefined - Missing Value</h3>
+            <p>
+              Consider a situation where you declared a variable but didn't give
+              it a value:
+            </p>
+            <pre
+              style="
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 5px;
+                padding: 10px;
+                white-space: pre-wrap;
+                overflow-y: hidden;
+              ">
+                  <code style="margin-top: 8px;
+                  margin-bottom: 8px;">
+let temperature; // We declared but didn't set a temperature
+                  </code>
+                </pre>
+            <p>
+              Now, <code style="color: #ffc107">temperature</code> is
+              <code style="color: #dc3545">undefined</code> because it's like
+              saying, "I don't know the temperature."
+            </p>
+
+            <!-- Use Case 3: Function Example -->
+            <h3>3. Function Example</h3>
+            <p>
+              Functions can also return
+              <code style="color: #dc3545">undefined</code> when they don't have
+              a specific result:
+            </p>
+            <pre
+              style="
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 5px;
+                padding: 10px;
+                white-space: pre-wrap;
+                overflow-y: hidden;
+              ">
+                  <code>
+function findBook(title) {
+  if (title === "Harry Potter") {
+  return "Found it!";
+}
+// No return statement here, so it's undefined
+}
+                  </code>
+                </pre>
+            <p>
+              If you search for a book that's not "Harry Potter," the function
+              returns
+              <code style="color: #dc3545">undefined</code>.
+            </p>
+
+            <p>
+              These are the basic uses of
+              <code style="color: #28a745">null</code> and
+              <code style="color: #dc3545">undefined</code> in JavaScript.
+              <code style="color: #28a745">null</code> means "empty" or
+              "cleared," while
+              <code style="color: #dc3545">undefined</code> means "I don't know"
+              or "missing."
+            </p>
+
+            <div class="modal-action">
+              <button
+                class="btn"
+                style="background-color: #007bff; color: #fff; border: none">
+                Close
+              </button>
+            </div>
+          </form>
+        </dialog>
+      </div>
+    </div>
+
+    <!-- Middle Container -->
+    <div class="container mx-auto mt-8">
+      <div class="bg-white p-8 rounded-lg shadow-md card">
+        <h2 class="text-2xl font-semibold uppercase text-center mb-4">
+          What is REST <span>API</span> ?
+        </h2>
+        <div class="h-1 w-12 mx-auto mb-4 bg-gray-700"></div>
+        <p class="text-base text-center">
+          This is the content of the middle container. You can add your text and
+          elements here.
+        </p>
+        <div class="flex justify-center mt-4">
+          <a
+            onclick="my_modal_1.showModal()"
+            href="#"
+            class="text-xs uppercase text-gray-600 transition duration-300 inline-block read-more"
+            >Read More <i class="fa-solid fa-arrow-right-long"> </i
+          ></a>
+        </div>
+      </div>
+      <dialog id="my_modal_1" class="modal">
+        <form method="dialog" class="modal-box">
+          <h3 class="font-bold text-lg" style="color: #007bff">
+            What is a REST API?
+          </h3>
+          <p class="py-4">A REST API is like a waiter in a restaurant:</p>
+
+          <!-- Comparison 1: HTTP Methods -->
+          <h4 style="color: #ffc107">1. HTTP Methods</h4>
+          <p>
+            Just like a waiter takes different orders (GET, POST, PUT, DELETE),
+            a REST API uses various HTTP methods to perform different actions:
+          </p>
+          <pre
+            style="
+              background-color: #f0f8ff;
+              border: 1px solid #add8e6;
+              border-radius: 5px;
+              padding: 10px;
+              white-space: pre-wrap;
+              overflow-y: hidden;
+            ">
+            <code>
+    GET - Retrieve data
+  POST - Create new data
+ PUT - Update existing data
+DELETE - Remove data
+            </code>
+          </pre>
+
+          <!-- Comparison 2: Resources -->
+          <h4 style="color: #dc3545">2. Resources</h4>
+          <p>
+            Restaurants have a menu with different dishes; REST APIs have
+            resources (like menu items). Each resource is identified by a unique
+            URL:
+          </p>
+          <pre
+            style="
+              background-color: #f0f8ff;
+              border: 1px solid #add8e6;
+              border-radius: 5px;
+              padding: 10px;
+              white-space: pre-wrap;
+              overflow-y: hidden;
+            ">
+            <code>
+/menu/dishes
+ /users/profile
+  /products/123
+   </code>
+          </pre>
+
+          <!-- Comparison 3: Statelessness -->
+          <h4 style="color: #28a745">3. Stateless</h4>
+          <p>
+            Waiters don't remember previous orders; they only respond to current
+            requests. Similarly, REST APIs are stateless. Each request is
+            independent, and the server doesn't remember previous requests.
+          </p>
+
+          <h4 style="color: #007bff">4. Responses</h4>
+          <p>
+            When you order food, you get a dish. In REST, when you make a
+            request, you get a response. Responses can be in different formats
+            like JSON or XML.
+          </p>
+          <p style="color: #28a745">
+            In summary, a REST API is a way for different software applications
+            to communicate over the internet. It follows a set of rules (like
+            ordering food at a restaurant) to request and exchange data.
+          </p>
+
+          <div class="modal-action">
+            <button
+              class="btn"
+              style="background-color: #007bff; color: #fff; border: none">
+              Close
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+  </body>
+</html>
